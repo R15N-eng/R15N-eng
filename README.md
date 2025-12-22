@@ -1,7 +1,7 @@
 ## Olá, eu sou o Raimundo Nonato 👋
 
-- 🔭 Hoje trabalho com front-end
-- 🌱 Estudando Wordpress
+- 🔭 Hoje trabalho com front-end e back-end
+- 🌱 Estudando
 - 💬 Ask me about ...
 - 📫 Contate-me no email: <nonato.raimundo@ime.eb.br>
 - 😄 Pronouns: ele/dele
