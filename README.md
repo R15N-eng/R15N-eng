@@ -24,6 +24,7 @@ I work with front-end and back-end development, data analysis, and embedded syst
 **Mobile & Embedded**
 
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=flat&logo=dart&logoColor=white)
 ![Arduino](https://img.shields.io/badge/Arduino-00979D?style=flat&logo=arduino&logoColor=white)
 
 ---
@@ -46,7 +47,7 @@ I work with front-end and back-end development, data analysis, and embedded syst
 - React advanced patterns (hooks, context, performance)
 - REST APIs with Node.js & Express
 - Data analysis with Python (pandas, matplotlib)
-- Flutter for mobile development
+- Flutter & Dart for mobile development
 
 ---
 
@@ -60,3 +61,4 @@ I work with front-end and back-end development, data analysis, and embedded syst
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=R15N-eng&color=blueviolet&style=flat" />
 </p>
+
