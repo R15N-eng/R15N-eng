@@ -12,8 +12,8 @@ Usage (from the repository root):
     python tools/build_assets.py
 
 Fonts: Bricolage Grotesque and IBM Plex Sans (SIL Open Font License).
-Icons: Simple Icons (CC0-1.0); LinkedIn and envelope from Font Awesome Free
-(CC BY 4.0). Logos remain trademarks of their owners.
+Icons: Simple Icons (CC0-1.0), including X and YouTube; LinkedIn and envelope
+from Font Awesome Free (CC BY 4.0). Logos remain trademarks of their owners.
 """
 import io
 import random
@@ -437,13 +437,13 @@ MC_ROWS = [("Priority group", 78.0, 93.5), ("Everyone else", 76.8, 59.2)]
 MC_PARTS = [
     ("My part", "Front end for the family and city-office views, wiring the allocation engine into the "
                 "API, and documentation. Team project."),
-    ("Result", "One of 5 finalist teams out of 42 at Claude Impact Lab Rio. The simulation places 912 "
-               "fewer children in total: 48,680 to 47,768."),
+    ("Result", "Finalist at Claude Impact Lab Rio. The simulation places 912 fewer children in total: "
+               "48,680 to 47,768."),
     ("Built with", "HTML, CSS, JavaScript, Python, FastAPI, Gale-Shapley deferred acceptance."),
 ]
 MC_PROBLEM = "Daycare seats in 2025: what changes if they are filled child by child?"
-MC_NOTE = ("Priority group: score 51 or more, which in 2025 means registered in CadÚnico. Anonymized data; "
-           "the source warns its indicators do not represent reality.")
+MC_NOTE = ("Priority group: score 51 or more, which in 2025 means registered in CadÚnico. "
+           "The data source warns its indicators do not represent reality.")
 MC_TITLE = (f"Match Carioca, an independent hackathon prototype, not a city service. {MC_PROBLEM} "
             "Share of children placed: priority group 78.0% in the real process and 93.5% in the "
             "simulation; everyone else 76.8% and 59.2%. " + MC_NOTE + " "
@@ -509,14 +509,11 @@ STACK = [
     ("Frameworks and libraries", [("react", "React"), ("nodedotjs", "Node.js"), ("express", "Express"),
                                   ("fastapi", "FastAPI"), ("flutter", "Flutter"), ("pandas", "pandas"),
                                   ("numpy", "NumPy")]),
-    ("Data and tooling", [("postgresql", "PostgreSQL"), ("git", "Git"), ("github", "GitHub"),
-                          ("vite", "Vite")]),
-    ("Design and engineering", [("figma", "Figma"), ("arduino", "Arduino"), ("latex", "LaTeX")]),
+    ("Data, tools and hardware", [("postgresql", "PostgreSQL"), ("git", "Git"), ("github", "GitHub"),
+                                  ("vite", "Vite"), ("arduino", "Arduino")]),
 ]
-# Brands without an icon in Simple Icons are listed as text; logos are not redrawn.
-STACK_TEXT = "Also SolidWorks and Power BI."
-STACK_TITLE = ("Technical stack. " + " ".join(
-    f"{cat}: {', '.join(n for _, n in items)}." for cat, items in STACK) + " " + STACK_TEXT)
+STACK_TITLE = "Technical stack. " + " ".join(
+    f"{cat}: {', '.join(n for _, n in items)}." for cat, items in STACK)
 
 
 def icon(slug, cx, y, size, fill):
@@ -544,8 +541,7 @@ def stack(mobile):
                 c.add(icon(slug, cx, row, 28, W80))
                 c.text(name, cx, row + 51, 14.5, W70, anchor="middle", max_width=cell)
             y += ((len(items) - 1) // cols + 1) * 74 + 2
-        c.text(STACK_TEXT, 24, y + 8, 16, W70)
-        return c.render(y + 34, STACK_TITLE)
+        return c.render(y + 8, STACK_TITLE)
     c.text("Technical stack", 42, 66, 34, WHITE, XBOLD, track=-0.02)
     c.text("Tools from projects and coursework.", DESK - 44, 64, 15, W60, anchor="end")
     y, left = 92, 252
@@ -557,8 +553,6 @@ def stack(mobile):
             cx = left + cell * i + cell / 2
             c.add(icon(slug, cx, y + 20, 28, W80))
             c.text(name, cx, y + 71, 13.5, W70, anchor="middle", max_width=cell - 2)
-        if cat == "Design and engineering":
-            c.text(STACK_TEXT, left + cell * len(items) + 20, y + 52, 15, W70)
         y += 92
     return c.render(y + 6, STACK_TITLE)
 
@@ -569,15 +563,12 @@ TIMELINE = [
      "Entrepreneurship league at IME. Set up its selection process and operating model; helped run "
      "its first hackathon, with FGV, in October 2026."),
     ("2025 to now", "Coordinator, IME Júnior",
-     "Tech and people management at IME's junior enterprise, including web and mobile client projects."),
+     "Computing and people management at IME's junior enterprise."),
     ("2025 to now", "Member, IME Finance", "Financial markets league."),
     ("2025", "Reserve officer aspirant, Brazilian Army", ""),
     ("2019, 2020", "Brazilian Astronomy Olympiad", "Silver medal in 2019, gold medal in 2020."),
 ]
-EXPLORING = ("Advanced React patterns, REST APIs with Node.js, mobile development with Flutter and data "
-             "analysis with Python.")
-BG_TITLE = ("Background. " + " ".join(f"{a}: {b}. {d}" for a, b, d in TIMELINE)
-            + f" Currently exploring: {EXPLORING}")
+BG_TITLE = "Background. " + " ".join(f"{a}: {b}. {d}".strip() for a, b, d in TIMELINE)
 
 
 def background(mobile):
@@ -592,12 +583,7 @@ def background(mobile):
             if detail:
                 yy = c.para(detail, 24, yy + 2, 16.5, PHONE - 48, 24, W70)
             y = yy
-        lines = BODY.wrap(EXPLORING, 17, PHONE - 48)
-        h = 58 + 25 * len(lines)
-        c.add(rect(12, y + 8, PHONE - 24, h, SURFACE))
-        c.text("Currently exploring", 24, y + 40, 16, W60, MEDIUM)
-        c.para(EXPLORING, 24, y + 68, 17, PHONE - 48, 25, W90)
-        return c.render(y + h + 20, BG_TITLE)
+        return c.render(y + 20, BG_TITLE)
     c.text("Background", 42, 66, 34, WHITE, XBOLD, track=-0.02)
     y = 92
     for when, role, detail in TIMELINE:
@@ -609,12 +595,7 @@ def background(mobile):
         else:
             yy = y + 55
         y = max(yy - 3, y + 54)
-    lines = BODY.wrap(EXPLORING, 15.5, 620)
-    h = 36 + 23 * len(lines)
-    c.add(rect(24, y + 8, DESK - 48, h, SURFACE))
-    c.text("Currently exploring", 44, y + 40, 15, W70, MEDIUM)
-    c.para(EXPLORING, 188, y + 40, 15.5, 620, 23, W90)     # same column as the roles above
-    return c.render(y + h + 32, BG_TITLE)
+    return c.render(y + 24, BG_TITLE)
 
 
 # ------------------------------------------------------------ contact buttons
@@ -624,36 +605,42 @@ FA_CREDIT = "<!-- Icon: Font Awesome Free 6.7.2, https://fontawesome.com/license
 CONTACTS = {
     "linkedin": ("LinkedIn", "LinkedIn", f"{FA}/brands/linkedin-in.svg"),
     "x": ("@nonato_eng", "X (@nonato_eng)", "simple-icons/icons/x.svg"),
+    "youtube": ("YouTube", "YouTube (Raimundo Nonato)", "simple-icons/icons/youtube.svg"),
     "email": ("Email", "Email", f"{FA}/solid/envelope.svg"),
 }
 ICON_BOX = 15
+# The YouTube icon is wide and short: a wider box gives it the same visual weight.
+ICON_BOXES = {"youtube": 19}
+COMPACT_W = 48
 
 
-def contact_icon(rel, x, y, fill):
+def contact_icon(rel, x, y, fill, box):
     """Any single-path icon, scaled to fit a square box and centred in it."""
     svg = _module(rel).read_text(encoding="utf-8")
     paths = re.findall(r'<path[^>]*?\sd="([^"]+)"', svg)
     if len(paths) != 1:
         raise SystemExit(f"Unexpected icon structure: {rel}")
     _, _, w, h = (float(v) for v in re.search(r'viewBox="([^"]+)"', svg).group(1).split())
-    k = ICON_BOX / max(w, h)
+    k = box / max(w, h)
     return ((FA_CREDIT if rel.startswith(FA) else "")
-            + f'<path transform="translate({x + (ICON_BOX - w * k) / 2:.2f} {y + (ICON_BOX - h * k) / 2:.2f}) '
+            + f'<path transform="translate({x + (box - w * k) / 2:.2f} {y + (box - h * k) / 2:.2f}) '
               f'scale({k:.5f})" fill="{fill}" d="{paths[0]}"/>')
 
 
 def button(key, compact):
     label, name, rel = CONTACTS[key]
     defs, gap, pad = {}, 9, 18
+    box = ICON_BOXES.get(key, ICON_BOX)
+    color = WHITE if key == "youtube" else W90      # YouTube's monochrome icon is pure white
     if compact:
-        w, text, x = 56, "", (56 - ICON_BOX) / 2
+        w, text, x = COMPACT_W, "", (COMPACT_W - box) / 2
     else:
-        w = round(pad + ICON_BOX + gap + STRONG.width(label, 15) + pad)
+        w = round(pad + box + gap + STRONG.width(label, 15) + pad)
         x = pad
-        text = STRONG.path(defs, label, x + ICON_BOX + gap, 25.5, 15, W90)
+        text = STRONG.path(defs, label, x + box + gap, 25.5, 15, W90)
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="40" viewBox="0 0 {w} 40" role="img">'
             f"<title>{escape(name)}</title>" + rect(0.5, 0.5, w - 1, 39, BG, LINE, 19.5)
-            + f'<defs>{"".join(defs.values())}</defs>' + contact_icon(rel, x, (40 - ICON_BOX) / 2, W90)
+            + f'<defs>{"".join(defs.values())}</defs>' + contact_icon(rel, x, (40 - box) / 2, color, box)
             + text + "</svg>\n")
 
 
