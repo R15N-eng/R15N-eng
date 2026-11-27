@@ -7,11 +7,13 @@ Text is converted to paths, so it renders the same on every device
 
 Usage (from the repository root):
     pip install fonttools uharfbuzz
-    npm install --no-save @fontsource/bricolage-grotesque @fontsource/ibm-plex-sans simple-icons@16.38.1
+    npm install --no-save @fontsource/bricolage-grotesque @fontsource/ibm-plex-sans \\
+        simple-icons@16.38.1 @fortawesome/fontawesome-free@6.7.2
     python tools/build_assets.py
 
 Fonts: Bricolage Grotesque and IBM Plex Sans (SIL Open Font License).
-Icons: Simple Icons (CC0-1.0). Logos remain trademarks of their owners.
+Icons: Simple Icons (CC0-1.0); LinkedIn and envelope from Font Awesome Free
+(CC BY 4.0). Logos remain trademarks of their owners.
 """
 import io
 import random
@@ -290,7 +292,7 @@ def hero(mobile):
         c.text("Raimundo Nonato", 42, 80 + size * 0.98, size, WHITE, XBOLD, track=track, max_width=DESK - 88)
         y = 80 + size * 0.98 + 80
         c.text(PHRASE, 44, y, 42, W90, DISPLAY, track=-0.012, max_width=470)
-        c.para(INTRO, 552, y - 29, 16.5, 284, 25, W70)
+        c.para(INTRO, 552, y - 34, 16.5, 284, 25, W70)
         end = matching(c, 44, y + 80, DESK - 88, 118, 19, 14, 17)
         c.text("A made-up example: nine applicants ranked by score, seven seats, matched by deferred "
                "acceptance.", DESK / 2, end + 36, 13.5, W60, anchor="middle")
@@ -310,8 +312,8 @@ def hero(mobile):
     c.text("checked.", 24, y + 43, 40, W90, DISPLAY, track=-0.012)
     y = c.para(INTRO, 24, y + 86, 17, PHONE - 48, 26, W70)
     end = matching(c, 24, y + 32, PHONE - 48, 128, 15.5, 14, 13)
-    y = c.para("A made-up example: nine applicants by score, seven seats. The code that draws it first "
-               "checks that the match is stable.",
+    y = c.para("A made-up example: nine applicants ranked by score, seven seats, matched by deferred "
+               "acceptance. The code that draws it first checks that the match is stable.",
                24, end + 34, 16, PHONE - 48, 23, W60)
     return c.render(y + 4, HERO_TITLE)
 
@@ -485,7 +487,7 @@ def match(mobile):
     c = Canvas(PHONE, 24)
     c.text("Match", 22, 72, 52, WHITE, XBOLD, track=-0.025)
     c.text("Carioca", 22, 122, 52, WHITE, XBOLD, track=-0.025)
-    c.pill("Independent prototype", 24, 144, 15, "start")
+    c.pill("Independent hackathon prototype", 24, 144, 15, "start")
     y = c.para(MC_PROBLEM, 24, 214, 20, PHONE - 48, 28, W90, MEDIUM)
     y = c.para("Priority families gain seats. Other families lose them.", 24, y + 6, 17, PHONE - 48, 25, W70)
     legend(c, 24, y + 18, 16, True)
@@ -572,7 +574,6 @@ TIMELINE = [
     ("2025", "Reserve officer aspirant, Brazilian Army", ""),
     ("2019, 2020", "Brazilian Astronomy Olympiad", "Silver medal in 2019, gold medal in 2020."),
 ]
-LANGUAGES = "Portuguese (native) and English."
 EXPLORING = ("Advanced React patterns, REST APIs with Node.js, mobile development with Flutter and data "
              "analysis with Python.")
 BG_TITLE = ("Background. " + " ".join(f"{a}: {b}. {d}" for a, b, d in TIMELINE)
@@ -591,11 +592,11 @@ def background(mobile):
             if detail:
                 yy = c.para(detail, 24, yy + 2, 16.5, PHONE - 48, 24, W70)
             y = yy
-        lines = BODY.wrap(EXPLORING, 17, PHONE - 64)
+        lines = BODY.wrap(EXPLORING, 17, PHONE - 48)
         h = 58 + 25 * len(lines)
         c.add(rect(12, y + 8, PHONE - 24, h, SURFACE))
-        c.text("Currently exploring", 28, y + 40, 16, W60, MEDIUM)
-        c.para(EXPLORING, 28, y + 68, 17, PHONE - 64, 25, W90)
+        c.text("Currently exploring", 24, y + 40, 16, W60, MEDIUM)
+        c.para(EXPLORING, 24, y + 68, 17, PHONE - 48, 25, W90)
         return c.render(y + h + 20, BG_TITLE)
     c.text("Background", 42, 66, 34, WHITE, XBOLD, track=-0.02)
     y = 92
@@ -608,22 +609,52 @@ def background(mobile):
         else:
             yy = y + 55
         y = max(yy - 3, y + 54)
-    lines = BODY.wrap(EXPLORING, 15.5, 560)
+    lines = BODY.wrap(EXPLORING, 15.5, 620)
     h = 36 + 23 * len(lines)
     c.add(rect(24, y + 8, DESK - 48, h, SURFACE))
     c.text("Currently exploring", 44, y + 40, 15, W70, MEDIUM)
-    c.para(EXPLORING, 252, y + 40, 15.5, 560, 23, W90)
+    c.para(EXPLORING, 188, y + 40, 15.5, 620, 23, W90)     # same column as the roles above
     return c.render(y + h + 32, BG_TITLE)
 
 
 # ------------------------------------------------------------ contact buttons
-def button(label):
-    w = round(STRONG.width(label, 16) + 48)
-    defs = {}
-    text = STRONG.path(defs, label, w / 2, 26, 16, W90, "middle")
+FA = "@fortawesome/fontawesome-free/svgs"
+FA_CREDIT = "<!-- Icon: Font Awesome Free 6.7.2, https://fontawesome.com/license/free (CC BY 4.0) -->"
+# file name: (visible label, accessible name, icon file)
+CONTACTS = {
+    "linkedin": ("LinkedIn", "LinkedIn", f"{FA}/brands/linkedin-in.svg"),
+    "x": ("@nonato_eng", "X (@nonato_eng)", "simple-icons/icons/x.svg"),
+    "email": ("Email", "Email", f"{FA}/solid/envelope.svg"),
+}
+ICON_BOX = 15
+
+
+def contact_icon(rel, x, y, fill):
+    """Any single-path icon, scaled to fit a square box and centred in it."""
+    svg = _module(rel).read_text(encoding="utf-8")
+    paths = re.findall(r'<path[^>]*?\sd="([^"]+)"', svg)
+    if len(paths) != 1:
+        raise SystemExit(f"Unexpected icon structure: {rel}")
+    _, _, w, h = (float(v) for v in re.search(r'viewBox="([^"]+)"', svg).group(1).split())
+    k = ICON_BOX / max(w, h)
+    return ((FA_CREDIT if rel.startswith(FA) else "")
+            + f'<path transform="translate({x + (ICON_BOX - w * k) / 2:.2f} {y + (ICON_BOX - h * k) / 2:.2f}) '
+              f'scale({k:.5f})" fill="{fill}" d="{paths[0]}"/>')
+
+
+def button(key, compact):
+    label, name, rel = CONTACTS[key]
+    defs, gap, pad = {}, 9, 18
+    if compact:
+        w, text, x = 56, "", (56 - ICON_BOX) / 2
+    else:
+        w = round(pad + ICON_BOX + gap + STRONG.width(label, 15) + pad)
+        x = pad
+        text = STRONG.path(defs, label, x + ICON_BOX + gap, 25.5, 15, W90)
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="40" viewBox="0 0 {w} 40" role="img">'
-            f"<title>{label}</title>" + rect(0.5, 0.5, w - 1, 39, BG, LINE, 19.5)
-            + f'<defs>{"".join(defs.values())}</defs>' + text + "</svg>\n")
+            f"<title>{escape(name)}</title>" + rect(0.5, 0.5, w - 1, 39, BG, LINE, 19.5)
+            + f'<defs>{"".join(defs.values())}</defs>' + contact_icon(rel, x, (40 - ICON_BOX) / 2, W90)
+            + text + "</svg>\n")
 
 
 PANELS = {"hero": hero, "luneta": luneta, "match-carioca": match, "stack": stack, "background": background}
@@ -637,10 +668,11 @@ def main():
             path = OUT / f"{name}{'-mobile' if mobile else ''}.svg"
             path.write_text(fn(mobile), encoding="utf-8")
             wanted.add(path.name)
-    for label in ("LinkedIn", "Email"):
-        path = OUT / f"button-{label.lower()}.svg"
-        path.write_text(button(label), encoding="utf-8")
-        wanted.add(path.name)
+    for key in CONTACTS:
+        for compact in (False, True):
+            path = OUT / f"button-{key}{'-compact' if compact else ''}.svg"
+            path.write_text(button(key, compact), encoding="utf-8")
+            wanted.add(path.name)
     stale = sorted(p.name for p in OUT.glob("*.svg") if p.name not in wanted)
     print("OK:", len(wanted), "files; hero matching is stable")
     if stale:
