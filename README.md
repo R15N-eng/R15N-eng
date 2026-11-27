@@ -1,111 +1,46 @@
-# Nice to meet you, I'm Raimundo Nonato 👋
-
-🇧🇷 Living in Rio de Janeiro, Brazil  
-🎓 Computer Engineering student at Instituto Militar de Engenharia (IME)  
-🚀 Co-Founder at LEPV — Liga de Empreendedorismo da Praia Vermelha  
-💼 Front-end Consultant & Coordinator at IME Junior  
-📊 Member of IME Finance — Financial Markets League  
-🎖️ Army Reserve Officer Aspirant — Brazilian Army  
-🤖 Interested in AI, programming and game development  
-
----
-
-## 🛠 Skills
-
-**Front-end**
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-
-**Back-end & Languages**
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
-
-**Mobile & Embedded**
-
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
-
-**Data & Finance**
-
-![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![Microsoft Excel](https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)
-![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)
-
-**Design & Tools**
-
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-![SolidWorks](https://img.shields.io/badge/SolidWorks-FF0000?style=for-the-badge&logo=dassaultsystemes&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-
----
-
-## 📊 GitHub Stats
+<picture>
+  <source media="(max-width: 600px), (min-width: 768px) and (max-width: 900px)" srcset="assets/hero-mobile.svg">
+  <img src="assets/hero.svg" width="100%" alt="Raimundo Nonato. Built to be checked. I build web products and show how they work: the sentence behind a rule, the trade-off behind a result. Computer Engineering student at IME, co-founder of LEPV, Rio de Janeiro. Graphic: a deferred-acceptance matching on a made-up example, checked for stability by the code that draws it.">
+</picture>
 
 <p align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=R15N-eng&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=R15N-eng&layout=compact&theme=tokyonight&hide_border=true" />
+  <a href="https://linkedin.com/in/raimundononato-eng"><picture><source media="(max-width: 700px), (min-width: 768px) and (max-width: 1011px)" srcset="assets/button-linkedin-compact.svg"><img src="assets/button-linkedin.svg" height="40" alt="LinkedIn"></picture></a>
+  &nbsp;
+  <a href="https://x.com/nonato_eng"><picture><source media="(max-width: 700px), (min-width: 768px) and (max-width: 1011px)" srcset="assets/button-x-compact.svg"><img src="assets/button-x.svg" height="40" alt="X (@nonato_eng)"></picture></a>
+  &nbsp;
+  <a href="https://www.youtube.com/@rnonato_eng"><picture><source media="(max-width: 700px), (min-width: 768px) and (max-width: 1011px)" srcset="assets/button-youtube-compact.svg"><img src="assets/button-youtube.svg" height="40" alt="YouTube (Raimundo Nonato)"></picture></a>
+  &nbsp;
+  <a href="mailto:nonato.raimundo@ime.eb.br"><picture><source media="(max-width: 700px), (min-width: 768px) and (max-width: 1011px)" srcset="assets/button-email-compact.svg"><img src="assets/button-email.svg" height="40" alt="Email"></picture></a>
 </p>
 
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=R15N-eng&theme=tokyonight&hide_border=true" />
-</p>
+<a href="https://lunetaoportunidades.com.br">
+<picture>
+  <source media="(max-width: 600px), (min-width: 768px) and (max-width: 900px)" srcset="assets/luneta-mobile.svg">
+  <img src="assets/luneta.svg" width="100%" alt="Luneta. Eligibility rules hide inside long research funding calls. It shows each rule next to the sentence it came from. A check without AI confirms the quote exists; otherwise the rule is marked unconfirmed. My part: Project management, product discovery, brand and site copy. Accountable for the site and user experience in a team of five. Result: Public site listing 179 calls from 10 funding agencies (12 Nov 2026). IME&#x27;s InovaIME portal links to it as a prototype in testing. Team&#x27;s stack: Python, Docling, language models, a rule-based quote check, Next.js, TypeScript.">
+</picture>
+</a>
 
----
+<p><a href="https://lunetaoportunidades.com.br">Visit Luneta</a> or read the <a href="https://github.com/luneta-oportunidades/luneta-documentacao">public documentation</a> (in Portuguese). The source code is private.</p>
 
-## 💼 Experience
+<picture>
+  <source media="(max-width: 600px), (min-width: 768px) and (max-width: 900px)" srcset="assets/match-carioca-mobile.svg">
+  <img src="assets/match-carioca.svg" width="100%" alt="Match Carioca, an independent hackathon prototype, not a city service. Daycare seats in 2025: what changes if they are filled child by child? Share of children placed: priority group 78.0% in the real process and 93.5% in the simulation; everyone else 76.8% and 59.2%. Priority group: score 51 or more, which in 2025 means registered in CadÚnico. The data source warns its indicators do not represent reality. My part: Front end for the family and city-office views, wiring the allocation engine into the API, and documentation. Team project. Result: Finalist at Claude Impact Lab Rio. The simulation places 912 fewer children in total: 48,680 to 47,768. Built with: HTML, CSS, JavaScript, Python, FastAPI, Gale-Shapley deferred acceptance.">
+</picture>
 
-**LEPV — Liga de Empreendedorismo da Praia Vermelha · Co-Founder** *(Jan 2026 – Present)*  
-- Co-founded an entrepreneurship league at IME to bridge the gap between traditional engineering and real-world product creation  
-- Leading a team of engineers focused on building scalable solutions and fostering an innovation culture  
+### Also built
 
-**IME Junior — Front-end Consultant & Coordinator** *(Jan 2025 – Dec 2027)*  
-- Building modular, reusable and scalable front-end components  
-- Code reviews and mentoring of junior developers  
-- Landing pages optimized for SEO, performance and conversion rate  
-- Version control with Git, GitHub and GitLab in agile teams  
+- **Automated catapult**, IME introductory engineering project. I led a group of six, planned the project with PMBOK, and wrote the Flutter app that sets the distance and fires over Bluetooth. Arduino UNO on the hardware side, designed for targets from 0.5 to 4 m.
+- [**Game Guide API**](https://github.com/R15N-eng/Game-Guide-Api), a REST API for tracking game achievements with Node.js, Express and PostgreSQL. Learning project, in development.
+- [**Task App**](https://github.com/R15N-eng/Task---App), a task manager with React, Express and PostgreSQL. Learning project, in development.
 
-**IME Finance — Financial Markets League** *(Jan 2025 – Present)*  
-- Financial analysis: P&L statements, balance sheets and cash flow  
-- Sector comparatives and market data research  
-- Interactive dashboards and executive presentations for stakeholders  
-- Strategic indicators to support senior management decisions  
+<picture>
+  <source media="(max-width: 600px), (min-width: 768px) and (max-width: 900px)" srcset="assets/stack-mobile.svg">
+  <img src="assets/stack.svg" width="100%" alt="Technical stack. Languages: JavaScript, Python, C, Dart, HTML, CSS. Frameworks and libraries: React, Node.js, Express, FastAPI, Flutter, pandas, NumPy. Data, tools and hardware: PostgreSQL, Git, GitHub, Vite, Arduino.">
+</picture>
 
-**Brazilian Army — Reserve Officer Aspirant** *(Jan 2025 – Dec 2025)*  
-- Military leadership training focused on decision-making under high-pressure environments  
-- Developed discipline, resilience and team management skills  
+<picture>
+  <source media="(max-width: 600px), (min-width: 768px) and (max-width: 900px)" srcset="assets/background-mobile.svg">
+  <img src="assets/background.svg" width="100%" alt="Background. 2026 to now: Co-founder, LEPV. Entrepreneurship league at IME. Set up its selection process and operating model; helped run its first hackathon, with FGV, in October 2026. 2025 to now: Coordinator, IME Júnior. Computing and people management at IME&#x27;s junior enterprise. 2025 to now: Member, IME Finance. Financial markets league. 2025: Reserve officer aspirant, Brazilian Army. 2019, 2020: Brazilian Astronomy Olympiad. Silver medal in 2019, gold medal in 2020.">
+</picture>
 
----
-
-## 🌱 Currently Learning
-
-- React advanced patterns (hooks, context, performance)
-- Flutter & Dart for mobile development
-- REST APIs with Node.js & Express
-- Data analysis with Python (pandas, matplotlib)
-
----
-
-## 🏆 Achievements
-
-🥇 **Gold Medal** — Brazilian Astronomy Olympiad (OBA) 2020  
-🥈 **Silver Medal** — Brazilian Astronomy Olympiad (OBA) 2019  
-
----
-
-## 📫 Contact
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/raimundononato-eng)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nonato.raimundo@ime.eb.br)
-
----
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=R15N-eng&color=blueviolet&style=for-the-badge" />
-</p>
+<sub>The graphics are original and generated by <a href="tools/build_assets.py"><code>tools/build_assets.py</code></a>. Icons come from <a href="https://simpleicons.org">Simple Icons</a> and <a href="https://fontawesome.com/license/free">Font Awesome Free</a> (CC BY 4.0). Logos belong to their owners.</sub>
