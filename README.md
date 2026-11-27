@@ -1,111 +1,79 @@
-# Nice to meet you, I'm Raimundo Nonato 👋
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/header-mobile-dark.svg">
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="assets/header-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
+  <img src="assets/header-light.svg" width="100%" alt="Raimundo Nonato. Software that shows its work. Computer Engineering at IME. Graphic: a deferred-acceptance run on a made-up example, 9 applicants and 7 seats.">
+</picture>
 
-🇧🇷 Living in Rio de Janeiro, Brazil  
-🎓 Computer Engineering student at Instituto Militar de Engenharia (IME)  
-🚀 Co-Founder at LEPV — Liga de Empreendedorismo da Praia Vermelha  
-💼 Front-end Consultant & Coordinator at IME Junior  
-📊 Member of IME Finance — Financial Markets League  
-🎖️ Army Reserve Officer Aspirant — Brazilian Army  
-🤖 Interested in AI, programming and game development  
+I'm Raimundo, a Computer Engineering student at Instituto Militar de Engenharia (IME) and co-founder of LEPV, an entrepreneurship league. I build web products, and I like results that someone else can check: a quote you can find in the source, a simulation you can run again.
 
----
+<a href="https://linkedin.com/in/raimundononato-eng"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/button-linkedin-dark.svg">
+  <img src="assets/button-linkedin-light.svg" height="36" alt="LinkedIn">
+</picture></a>
+<a href="mailto:nonato.raimundo@ime.eb.br"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/button-email-dark.svg">
+  <img src="assets/button-email-light.svg" height="36" alt="Email">
+</picture></a>
 
-## 🛠 Skills
+## Selected work
 
-**Front-end**
+### Luneta: research funding calls, with the evidence
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/luneta-mobile-dark.svg">
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="assets/luneta-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/luneta-dark.svg">
+  <img src="assets/luneta-light.svg" width="100%" alt="How Luneta works, illustrated: a rule is shown next to the exact sentence of the call that proves it. A check without AI confirms the quote exists; otherwise the rule is marked unconfirmed.">
+</picture>
 
-**Back-end & Languages**
+Calls for research funding are long and dense. Luneta gathers calls from Brazilian funding agencies and shows each extracted rule beside the passage of the official document it came from. It is a screening tool and does not replace reading the call.
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+- **My part:** project management, product discovery, brand and site copy; accountable for site and user experience in a team of five.
+- **Team's stack:** Python, Docling, language models with a deterministic quote validator, Next.js, TypeScript.
+- **Status:** published. As of 13 November 2026 it listed 179 calls from 10 agencies and was integrated into the InovaIME portal. Built in an IME engineering project course.
 
-**Mobile & Embedded**
+[Visit Luneta](https://lunetaoportunidades.com.br) or [read the public documentation](https://github.com/luneta-oportunidades/luneta-documentacao) (in Portuguese; the source code is private).
 
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
+### Match Carioca: a different way to allocate daycare seats
 
-**Data & Finance**
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/match-carioca-mobile-dark.svg">
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="assets/match-carioca-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/match-carioca-dark.svg">
+  <img src="assets/match-carioca-light.svg" width="100%" alt="Match Carioca simulation on anonymized 2025 data. Share of children placed: priority group 78.0% in the real process and 93.5% with deferred acceptance; everyone else 76.8% and 59.2%. Total placements 48,680 and 47,768. Hackathon prototype, not an official city service.">
+</picture>
 
-![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![Microsoft Excel](https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)
-![LaTeX](https://img.shields.io/badge/LaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)
+This prototype compares Rio's 2025 daycare allocation, made option by option, with an allocation made child by child using deferred acceptance (Gale–Shapley). The chart shows the trade-off: it moves seats toward the priority group (score of 51 or more), places fewer of the other children and places 912 fewer in total. You can rerun the numbers with [`simulate.py`](https://github.com/R15N-eng/Hackaton_Claude_Lab/blob/main/backend/engine/simulate.py).
 
-**Design & Tools**
+- **My part:** front end for the family and city-office views, integration of the allocation engine into the API, and documentation. This was a team project; the [commit history](https://github.com/R15N-eng/Hackaton_Claude_Lab/commits/main) shows who did what.
+- **Built with:** HTML, CSS, JavaScript, Python, FastAPI.
+- **Status:** hackathon prototype from Claude Impact Lab Rio #2. It is not an official service of the Rio city government, and its notifications are simulated.
 
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-![SolidWorks](https://img.shields.io/badge/SolidWorks-FF0000?style=for-the-badge&logo=dassaultsystemes&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+[Code, method and limitations](https://github.com/R15N-eng/Hackaton_Claude_Lab) (in Portuguese).
 
----
+### Earlier work, where I learned the back end
 
-## 📊 GitHub Stats
+- [**Game Guide API**](https://github.com/R15N-eng/Game-Guide-Api): REST API for tracking game achievements, with Node.js, Express and PostgreSQL. Password hashing and JWT-protected progress routes. In development.
+- [**Task App**](https://github.com/R15N-eng/Task---App): full-stack task manager with React, Express and PostgreSQL. In development.
 
-<p align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=R15N-eng&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=R15N-eng&layout=compact&theme=tokyonight&hide_border=true" />
-</p>
+## Toolbox
 
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=R15N-eng&theme=tokyonight&hide_border=true" />
-</p>
+- **In the public code above:** JavaScript, HTML and CSS, React, Node.js and Express, Python and FastAPI, PostgreSQL, Git.
+- **Also work with:** Flutter and Dart, C, Arduino, Figma, LaTeX, Power BI, SolidWorks.
+- **Product:** discovery, project management and interface copy, practiced on Luneta.
 
----
+## Background
 
-## 💼 Experience
+| When | Role |
+|---|---|
+| 2026 to now | Co-founder, LEPV (Liga de Empreendedorismo da Praia Vermelha) |
+| 2025 to now | Front-end consultant and coordinator, IME Júnior |
+| 2025 to now | Member, IME Finance, a financial markets league |
+| 2025 | Reserve officer aspirant, Brazilian Army |
 
-**LEPV — Liga de Empreendedorismo da Praia Vermelha · Co-Founder** *(Jan 2026 – Present)*  
-- Co-founded an entrepreneurship league at IME to bridge the gap between traditional engineering and real-world product creation  
-- Leading a team of engineers focused on building scalable solutions and fostering an innovation culture  
+Brazilian Astronomy Olympiad (OBA): gold medal in 2020, silver in 2019.
 
-**IME Junior — Front-end Consultant & Coordinator** *(Jan 2025 – Dec 2027)*  
-- Building modular, reusable and scalable front-end components  
-- Code reviews and mentoring of junior developers  
-- Landing pages optimized for SEO, performance and conversion rate  
-- Version control with Git, GitHub and GitLab in agile teams  
+## Now
 
-**IME Finance — Financial Markets League** *(Jan 2025 – Present)*  
-- Financial analysis: P&L statements, balance sheets and cash flow  
-- Sector comparatives and market data research  
-- Interactive dashboards and executive presentations for stakeholders  
-- Strategic indicators to support senior management decisions  
-
-**Brazilian Army — Reserve Officer Aspirant** *(Jan 2025 – Dec 2025)*  
-- Military leadership training focused on decision-making under high-pressure environments  
-- Developed discipline, resilience and team management skills  
-
----
-
-## 🌱 Currently Learning
-
-- React advanced patterns (hooks, context, performance)
-- Flutter & Dart for mobile development
-- REST APIs with Node.js & Express
-- Data analysis with Python (pandas, matplotlib)
-
----
-
-## 🏆 Achievements
-
-🥇 **Gold Medal** — Brazilian Astronomy Olympiad (OBA) 2020  
-🥈 **Silver Medal** — Brazilian Astronomy Olympiad (OBA) 2019  
-
----
-
-## 📫 Contact
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/raimundononato-eng)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nonato.raimundo@ime.eb.br)
-
----
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=R15N-eng&color=blueviolet&style=for-the-badge" />
-</p>
+Studying advanced React patterns, REST APIs with Node.js, mobile development with Flutter and data analysis with Python. I'm also interested in AI and game development.
